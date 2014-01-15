@@ -11,21 +11,26 @@ tasks that happen to have the same local names as
 <project default="build" xmlns:d="antlib:com.navelint.ant.docbook">
   <target name="build">
     <d:para>
-      This target gives a traditional greeting.
+      This target gives a traditional greeting.  It will fail the
+      build if the property <d:varname>quux</d:varname> is not
+      defined.
     </d:para>
     <echo>Hello, world!</echo>
+    <fail unless="quux">Goodbye, world!</fail>
   </target>
 </project>
 ```
 
-The new tasks may appear anywhere an ordinary Ant task would appear.
+The new tasks may appear anywhere an ordinary Ant task would appear,
+can be nested arbitrarily, and may contain character data.
 
 These can later be extracted via XSL to produce attractive
 documentation for your Ant build files.  Note that since these are
 *not* in the canonical namespace for DocBook XML, they cannot be
 validated against any schema or DTD while still part of the Ant build
 file.  However once you extract them via XSL, you may be able to
-perform such a validation.
+perform such a validation.  (And then go back to your Ant build file
+to correct your documentation markup accordingly!)
 
 Building
 --------
@@ -43,7 +48,7 @@ Testing
 Using
 -----
 
-Copy the output `docbook-dummy-VERSION.jar` to your `~/.ant/lib`
+Copy the output `target/docbook-dummy-VERSION.jar` to your `~/.ant/lib`
 or `ANT_HOME/lib` directory.
 
 Platform Notes
