@@ -11,7 +11,7 @@ tasks that happen to have the same local names as
 <project default="build" xmlns:d="antlib:com.navelint.ant.docbook">
   <target name="build">
     <d:para>
-      This target says 
+      This target gives a traditional greeting.
     </d:para>
     <echo>Hello, world!</echo>
   </target>
@@ -31,7 +31,7 @@ Building
 --------
 
 If you have an easy way to get the DocBook XML schemas from an
-operating system package, do it.  Then you can
+operating system package or package manager, do it.  Then you can
 
 `mvn clean package`
 
@@ -43,7 +43,7 @@ Testing
 Using
 -----
 
-Copy the output `docbook-dummy-`*version*`.jar` to your `~/.ant/lib`
+Copy the output `docbook-dummy-VERSION.jar` to your `~/.ant/lib`
 or `ANT_HOME/lib` directory.
 
 Platform Notes
@@ -53,7 +53,7 @@ Should be able to automatically find `docbook.xsd` when it was
 installed on:
 
 * Mac OS X with [brew](https://github.com/Homebrew/homebrew)
-* FreeBSD with pkgng
+* FreeBSD with [pkgng](https://github.com/freebsd/pkg)
 * Red Hat-like Linux with yum
 
 Can be easily extended for other platforms or installations via Maven
