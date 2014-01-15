@@ -1,0 +1,14 @@
+<project default="test" xmlns:d="antlib:com.navelint.ant.docbook">
+  <target name="test">
+    <d:book>
+      <d:chapter>
+	<d:section>
+	  <d:para>
+	    There may be a <d:filename>filename</d:filename> buried here.
+	  </d:para>
+	</d:section>
+      </d:chapter>
+    </d:book>
+    <echo>success</echo>
+  </target>
+</project>
